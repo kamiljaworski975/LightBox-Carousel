@@ -1,6 +1,7 @@
 # Foobar
 
 LightBox Carousel.
+https://kamiljaworski975.github.io/LightBox-Carousel/
 
 ## Installation
 
