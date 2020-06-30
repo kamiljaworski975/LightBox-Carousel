@@ -4,6 +4,7 @@ const next = document.querySelector(".next");
 const closeCur = document.querySelector(".close")
 
 // modal
+const modal = document.querySelector(".modal");
 const modalContent = document.querySelector(".modal-content");
 const slides = Array.from(document.querySelectorAll(".my-slides"));
 const columns = document.querySelectorAll(".column");
@@ -55,6 +56,13 @@ next.addEventListener("click", () => {
     })
 });
 closeCur.addEventListener("click", () => closeModal());
+
+
+modal.addEventListener("click", (e) => {
+  if (e.target.id === "myModal") {
+    closeModal();
+  }
+})
 
 
 // add click to main img to trigger open carousel 
@@ -139,8 +147,3 @@ function showAndClose() {
     next.style.display = "block";
   }
 }
-
-
-{/* <a href="https://ibb.co/sjCPGYG"><img src="https://i.ibb.co/R2NSmwm/bath-img-Desktop.jpg" alt="bath-img-Desktop" border="0" /></a>
-
-<a href="https://ibb.co/ZdKNntH"><img src="https://i.ibb.co/8M2XWTz/henry-co-3co-Kbdfn-AFg-unsplash.jpg" alt="henry-co-3co-Kbdfn-AFg-unsplash" border="0" /></a> */}
