@@ -32,6 +32,9 @@ img.hover-shadow {
   white-space: nowrap;
   width: 100%;
   overflow: hidden; }
+  @media only screen and (orientation: landscape) and (max-width: 56.25em) {
+    .column-box {
+      display: none; } }
   .column-box .column {
     width: 25%;
     display: inline-block;
@@ -66,14 +69,14 @@ img.hover-shadow {
     margin: auto;
     width: 70%;
     overflow: hidden;
-    z-index: 3; }
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
     @media only screen and (max-width: 37.5em) {
       .modal-content {
-        width: 90%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); } }
+        width: 90%; } }
 
 .my-slides {
   display: none;
@@ -88,6 +91,9 @@ img.hover-shadow {
   @media only screen and (max-width: 37.5em) {
     .my-slides {
       height: 30vh; } }
+  @media only screen and (orientation: landscape) and (max-width: 56.25em) {
+    .my-slides {
+      height: 60vh; } }
   .my-slides img {
     object-fit: cover;
     width: 100%;
@@ -146,6 +152,14 @@ img.hover-shadow {
       padding: 10px;
       font-size: 40px;
       transform: translateY(-50%); } }
+  @media only screen and (max-width: 37.5em) {
+    .prev,
+    .next {
+      position: fixed;
+      top: 90%;
+      padding: 10px;
+      font-size: 40px;
+      transform: translateY(-50%); } }
   .prev:active,
   .next:active {
     font-size: 30px; }
@@ -156,9 +170,6 @@ img.hover-shadow {
 
 .prev {
   left: 0; }
-  @media only screen and (max-width: 37.5em) {
-    .prev {
-      left: 80%; } }
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,

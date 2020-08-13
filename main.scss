@@ -27,6 +27,11 @@
       @content;
     } //1800
   }
+  @if $breakpoint == landscape-view {
+    @media only screen and (orientation: landscape) and(max-width: 56.25em) {
+      @content
+    }
+  }
 }
 
 img.hover-shadow {
@@ -64,11 +69,13 @@ img.hover-shadow {
   white-space: nowrap;
   width: 100%;
   overflow: hidden;
+  @include respond(landscape-view) {
+    display: none;
+  }
   & .column {
     width: 25%;
     display: inline-block;
     transition: all 1s;
-    // height: 100px;
     overflow: hidden;
     & img {
       width: 100%;
@@ -104,12 +111,12 @@ img.hover-shadow {
     width: 70%;
     overflow: hidden;
     z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     @include respond(phone) {
       width: 90%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
     }
   }
 }
@@ -128,6 +135,9 @@ img.hover-shadow {
   }
   @include respond(phone) {
     height: 30vh;
+  }
+  @include respond(landscape-view) {
+    height: 60vh;
   }
   & img {
     object-fit: cover;
@@ -198,6 +208,14 @@ img.hover-shadow {
     font-size: 40px;
     transform: translateY(-50%);
   }
+  @include respond(phone) {
+    position: fixed;
+    top: 90%;
+    padding: 10px;
+    font-size: 40px;
+    transform: translateY(-50%);
+  }
+  
   &:active {
     font-size: 30px;
   }
@@ -209,9 +227,6 @@ img.hover-shadow {
 }
 .prev {
   left: 0;
-  @include respond(phone) {
-    left: 80%;
-  }
 }
 
 /* On hover, add a black background color with a little bit see-through */
